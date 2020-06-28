@@ -39,7 +39,7 @@ var pizza = 8
 var personas = 4
 var cantidadporcionespersonas = pizza / personas
 
-
+//--------------------------------------------------------------------------------------------------------------------
 //funciones
 
 //modificanco de forma global a la variable
@@ -56,8 +56,10 @@ function imprimirNombreEnMinuscula(nombre){
   console.log(nombre)
 }
 imprimirNombreEnMinuscula(nombre)
-*/
 
+*/
+//--------------------------------------------------------------------------------------------------------------------
+/*
 
 //objetos
 //creamos los objetos
@@ -74,9 +76,12 @@ var dario = {
 }
 
 // manejo de objetos con funciones
+
 function imprimirNombreEnMinuscula(persona){
-  var nombre = persona.nombre.toLowerCase()//accedemos al atributo nombre el objeto que se envia
-  console.log(nombre)
+  var nombre = persona.nombre //accedemos al atributo nombre el objeto que se envia
+  //desestructurar objetos
+  // var { nombre } = persona
+  console.log(nombre.toLowerCase())
   //forma corta console.log(persona.nombre.toLowerCase())
 }
 
@@ -88,8 +93,34 @@ imprimirNombreEnMinuscula(sacha)
 function imprimirformacorta({nombre}){
   console.log(nombre.toUpperCase())
 }
-
 imprimirformacorta(dario)
 imprimirformacorta({nombre:'pepito'})
 
-//desestructurar objetos
+//ejercicio
+function informacioncompleta(persona){
+var saludo = `hola ${persona.nombre} ${persona.apellido},\nme encanta saber que su edad es de ${persona.edad} es un placer saludarte y que tengas buen dia.`
+  console.log(saludo)
+}
+
+informacioncompleta(dario)
+
+//los objetos pasados por parametro se pasan por referencia
+
+//modificar sacha
+
+function cumpleaños(persona){
+  persona.edad += 1 // se modifica el valor del objeto sacha directamente
+}
+// copiar a sacha
+function cumpleañosviejo(persona){
+  //retornamos la copia de un nuevo objeto con los atributos de sacha
+  return{
+    ...persona, //aqui se copian todos los atributos y si se quiere se pueden añair nuevos
+    edad: persona.edad + 1 // se modifica edad
+  }
+}
+
+var nuevoobjeto = cumpleañosviejo(sacha) //creamos el nuevo objeto a partir de otro.
+
+*/
+//--------------------------------------------------------------------------------------------------------------------
