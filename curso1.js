@@ -124,3 +124,63 @@ var nuevoobjeto = cumpleañosviejo(sacha) //creamos el nuevo objeto a partir de 
 
 */
 //--------------------------------------------------------------------------------------------------------------------
+/*
+var x=4 , y = '4'
+var comparacion1 = x==y // los lleva a un mismo tipo de dato y compara
+var comparacion2 = x===y // comparar si son el mismo valor y el mismo tipo de datos
+//comparacion de objetos
+var sacha ={
+  nombre: 'sacha'
+}
+var otropersona = {
+  nombre: 'sacha'
+}
+var comparacionobjetos = sacha==otropersona //da falso porque pregunta por la referencia, para que de true es otrapersona = Sancha
+*/
+//--------------------------------------------------------------------------------------------------------------------
+/*
+//condicionales Y Retorno en funciones
+
+var mario = {
+  nombre: 'Mario',
+  apellido: 'Ospino',
+  edad: 21,
+  ingeniero: true,
+  cocinero: false,
+  dj: false,
+  guitarrista: false,
+  pintor: true
+}
+const MAYORIA_DE_EDAD = 25
+function mayordeedad(persona){
+  return persona.edad >= MAYORIA_DE_EDAD
+}
+
+function imprimirProfesiones(persona){
+  console.log(`${persona.nombre} es:`)
+  //dos formas de hacerlo
+  if(persona.ingeniero === true){
+    console.log('\n Ingeniero');
+  }
+  if(persona.cocinero){
+    console.log('\n cocinero');
+  }else {
+    console.log('\n aun no es cocinero');
+  }
+  if(persona.dj){
+    console.log('\n dj');
+  }else {
+    console.log('\n aun no es dj');
+  }
+  if(persona.pintor){
+    console.log('\n Pintor');
+  }
+//aqui usamos el retorno de otra funcion
+  if(mayordeedad(persona)){
+    console.log('Es mayor de edad');
+  }else {
+    console.log('Es menor de edad');
+  }
+}
+imprimirProfesiones(mario)
+*/
