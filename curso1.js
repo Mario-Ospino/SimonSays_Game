@@ -155,7 +155,26 @@ const MAYORIA_DE_EDAD = 25
 function mayordeedad(persona){
   return persona.edad >= MAYORIA_DE_EDAD
 }
+//array function
 
+//forma 1 de escribir la funcion de arriba
+// const esMayorDeEdad = function (persona) {
+//   return persona.edad >= MAYORIA_DE_EDAD
+// }
+
+//forma 2 de escribir la funcion de arriba
+// const esMayorDeEdad = (persona) => {
+//   return persona.edad >= MAYORIA_DE_EDAD
+// }
+
+//forma 2 de escribir la funcion de arriba acortada
+const esMayorDeEdad = persona => persona.edad >= MAYORIA_DE_EDAD
+
+function permitiracceso(persona){
+  if(!esMayorDeEdad(persona)){
+    console.log('ACCESO DENEGADO');
+  }
+}
 function imprimirProfesiones(persona){
   console.log(`${persona.nombre} es:`)
   //dos formas de hacerlo
@@ -163,17 +182,17 @@ function imprimirProfesiones(persona){
     console.log('\n Ingeniero');
   }
   if(persona.cocinero){
-    console.log('\n cocinero');
+    console.log('cocinero');
   }else {
-    console.log('\n aun no es cocinero');
+    console.log(' aun no es cocinero');
   }
   if(persona.dj){
-    console.log('\n dj');
+    console.log('dj');
   }else {
-    console.log('\n aun no es dj');
+    console.log('aun no es dj');
   }
   if(persona.pintor){
-    console.log('\n Pintor');
+    console.log(' Pintor');
   }
 //aqui usamos el retorno de otra funcion
   if(mayordeedad(persona)){
@@ -181,6 +200,38 @@ function imprimirProfesiones(persona){
   }else {
     console.log('Es menor de edad');
   }
+
+  permitiracceso(persona)
 }
 imprimirProfesiones(mario)
+*/
+//--------------------------------------------------------------------------------------------------------------------
+/*
+//for
+
+var mario = {
+  nombre: 'mario',
+  apellido: 'ospino',
+  edad: 21,
+  peso: 60
+}
+const INCREMENTO_PESO = 0.2
+const DECREMENTO_PESO = 0.2
+
+const aumentardepeso = persona => persona.peso += INCREMENTO_PESO
+const disminuirdepeso = persona => persona.peso -= DECREMENTO_PESO
+console.log(' al inicio del año '+mario.nombre+' '+mario.apellido+' pesa :'+mario.peso+' kg');
+
+for (var i = 1; i <= 365; i++ ) {
+  var random = Math.random()
+  if(random < 0.25){
+    aumentardepeso(mario)
+  }else {
+    if(random < 0.50){
+      disminuirdepeso(mario)
+    }
+  }
+}
+
+console.log(' al final del año '+mario.nombre+' '+mario.apellido+' pesa :'+mario.peso+' kg');
 */
