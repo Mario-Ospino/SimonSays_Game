@@ -285,3 +285,93 @@ if(contador < 2){
   console.log('fui a ver si llovia '+contador+' veces');
 }
 */
+//--------------------------------------------------------------------------------------------------------------------
+/*
+//switch
+//prompt ventana emergente que pide un dato y retorna valor
+var signo = prompt('¿Cuál es tu signo')
+
+switch (signo) {
+  case 'acuario':
+    console.log('Hoy no es momento para resolver situaciones esenciales. Seguramente estará transitando una situación turbulenta en su vida que lo tiene muy preocupado')
+    break;
+  case 'piscis':
+    console.log('Intente cultivar su mundo interior y no se apresure a tomar decisiones que puedan afectar su futuro. Si necesita ayuda, pida un consejo a ese amigo.')
+    break;
+  case 'geminis':
+  case 'géminis':
+    console.log('aqui tenemos 2 casos para geminis y ambos imprimen este mensaje')
+    break;
+  default:
+    console.log(' lo sentimos, ninguna conicion se ha cumplido')
+    break;
+}
+*/
+
+//--------------------------------------------------------------------------------------------------------------------
+/*
+//Arrays
+var mario = {
+  nombre: 'Mario',
+  apellido: 'Ospino'
+}
+var jose = {
+  nombre: 'Jose',
+  apellido: 'De La ossa'
+}
+var sebastian = {
+  nombre: 'Aibert',
+  apellido: 'gamboa'
+}
+var personas = [mario,jose,sebastian]
+
+//opcion 1 para imprimir extensa
+console.log('persona 1 '+ personas[0].nombre);
+console.log('persona 2 '+ personas[1].nombre);
+console.log('persona 3 '+ personas[2].nombre);
+
+//opcion 2
+console.log('Todos los nobres de persona usando for')
+for (var i = 0; i < personas.length; i++) {
+  var persona = personas[i]
+  console.log(persona.nombre +' '+ persona.apellido)
+}
+*/
+//--------------------------------------------------------------------------------------------------------------------
+/*
+//filtrar en un array
+var mario = {
+  nombre: 'Mario',
+  apellido: 'Ospino',
+  edad: 15
+}
+var jose = {
+  nombre: 'Jose',
+  apellido: 'De La ossa',
+  edad: 20
+}
+var sebastian = {
+  nombre: 'Aibert',
+  apellido: 'gamboa',
+  edad: 18
+}
+var roberto = {
+  nombre: 'Roberto',
+  apellido: 'Oliveros',
+  edad: 17
+}
+//una manera de hacerlo
+//const esMayor = persona => persona.edad > 17
+
+//version pro
+const esMayor = ({edad}) => edad > 17
+
+var personas = [mario,roberto,sebastian,jose]
+var mayoresdeedad = personas.filter(esMayor)
+
+// otra manera de hacerlo
+// var mayoresdeedad = personas.filter(function (personas){
+// return persona.altura > 17
+// })
+console.log(mayoresdeedad);
+*/
