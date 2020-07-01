@@ -235,3 +235,53 @@ for (var i = 1; i <= 365; i++ ) {
 
 console.log(' al final del año '+mario.nombre+' '+mario.apellido+' pesa :'+mario.peso+' kg');
 */
+//--------------------------------------------------------------------------------------------------------------------
+/*
+
+//while
+var mario = {
+  nombre: 'mario',
+  apellido: 'ospino',
+  edad: 21,
+  peso: 60
+}
+var dias = 0
+const INCREMENTO_PESO = 0.3
+const DECREMENTO_PESO = 0.3
+const META = mario.peso - 3
+const comemucho = () => Math.random() < 0.3
+const realizaDeporte = () => Math.random() < 0.4
+const aumentardepeso = persona => persona.peso += INCREMENTO_PESO
+const disminuirdepeso = persona => persona.peso -= DECREMENTO_PESO
+console.log(' al inicio del año '+mario.nombre+' '+mario.apellido+' pesa :'+mario.peso+' kg');
+while (mario.peso > META) {
+  debugger //para para la ejecicion cada vez que llega a esta linea y ver que pasa
+  if(comemucho()){
+    aumentardepeso(mario)
+  }
+  if(realizaDeporte()){
+    disminuirdepeso(mario)
+  }
+  dias+=1
+}
+console.log('  dias transcurrido : '+dias+' hasta que '+mario.nombre+' '+mario.apellido+' adelgasara 3 kg :'+mario.peso+' kg');
+
+
+*/
+//--------------------------------------------------------------------------------------------------------------------
+/*
+// do while
+
+var contador = 0
+const llueve = () => Math.random() < 0.25
+do {
+  contador++
+}while(!llueve())
+
+if(contador < 2){
+  console.log('fui a ver si llovia '+contador+' vez');
+
+}else {
+  console.log('fui a ver si llovia '+contador+' veces');
+}
+*/
