@@ -338,27 +338,31 @@ for (var i = 0; i < personas.length; i++) {
 }
 */
 //--------------------------------------------------------------------------------------------------------------------
-/*
+
 //filtrar en un array
 var mario = {
   nombre: 'Mario',
   apellido: 'Ospino',
-  edad: 15
+  edad: 15,
+  altura: 1.90
 }
 var jose = {
   nombre: 'Jose',
   apellido: 'De La ossa',
-  edad: 20
+  edad: 20,
+  altura: 1.65
 }
 var sebastian = {
   nombre: 'Aibert',
   apellido: 'gamboa',
-  edad: 18
+  edad: 18,
+  altura: 1.70
 }
 var roberto = {
   nombre: 'Roberto',
   apellido: 'Oliveros',
-  edad: 17
+  edad: 17,
+  altura: 1.50
 }
 //una manera de hacerlo
 //const esMayor = persona => persona.edad > 17
@@ -373,5 +377,25 @@ var mayoresdeedad = personas.filter(esMayor)
 // var mayoresdeedad = personas.filter(function (personas){
 // return persona.altura > 17
 // })
-console.log(mayoresdeedad);
-*/
+//console.log(mayoresdeedad);
+
+//transformar un Arrays
+// const pasarAlturaACms = persona => {
+//   return{
+//     ...persona,
+//     altura: persona.altura * 100
+//   }
+// }
+
+//opcion 2
+const pasarAlturaACms = persona => ({
+    ...persona,
+    altura: persona.altura * 100
+})
+
+
+var personasCms = personas.map(pasarAlturaACms)
+
+console.log(personas);
+console.log(personasCms);
+//--------------------------------------------------------------------------------------------------------------------
