@@ -310,7 +310,7 @@ switch (signo) {
 
 //--------------------------------------------------------------------------------------------------------------------
 /*
-//Arrays
+//4. Arrays
 var mario = {
   nombre: 'Mario',
   apellido: 'Ospino'
@@ -338,31 +338,36 @@ for (var i = 0; i < personas.length; i++) {
 }
 */
 //--------------------------------------------------------------------------------------------------------------------
+/*
 
 //filtrar en un array
 var mario = {
   nombre: 'Mario',
   apellido: 'Ospino',
   edad: 15,
-  altura: 1.90
+  altura: 1.90,
+  cantidadDeLibros: 78
 }
 var jose = {
   nombre: 'Jose',
   apellido: 'De La ossa',
   edad: 20,
-  altura: 1.65
+  altura: 1.65,
+  cantidadDeLibros: 60
 }
 var sebastian = {
   nombre: 'Aibert',
   apellido: 'gamboa',
   edad: 18,
-  altura: 1.70
+  altura: 1.70,
+  cantidadDeLibros: 7
 }
 var roberto = {
   nombre: 'Roberto',
   apellido: 'Oliveros',
   edad: 17,
-  altura: 1.50
+  altura: 1.50,
+  cantidadDeLibros: 0
 }
 //una manera de hacerlo
 //const esMayor = persona => persona.edad > 17
@@ -398,4 +403,42 @@ var personasCms = personas.map(pasarAlturaACms)
 
 console.log(personas);
 console.log(personasCms);
+
+//reducir un array a un valor
+
+const reducer = (acum,persona) => acum + persona.cantidadDeLibros
+var totalDeLibros = personas.reduce(reducer,0)
+console.log('Cantidad de libro' + totalDeLibros)
+*/
 //--------------------------------------------------------------------------------------------------------------------
+//5. Programación Orientada a Objetos en JavaScript
+
+function Persona(nombre,apellido,edad,altura){
+  this.nombre = nombre
+  this.apellido = apellido
+  this.edad = edad
+  this.altura = altura
+}
+
+//metodos para el prototipo
+
+Persona.prototype.saludar = function () {
+console.log( `Funcion saludar -> Mucho gusto, me llamo ${this.nombre} ${this.apellido}`)
+}
+
+const ALTURA_PROMEDIO = 1.60
+Persona.prototype.soyalto = function (){
+  if(this.altura > ALTURA_PROMEDIO){
+    console.log('Soy alto porque mido -> '+this.altura)
+  }else {
+    console.log('No soy alto porque mido -> '+this.altura)
+  }
+}
+// con new se crea un nuevo objeto y se le asigna como prototipo Persona()
+var mario = new Persona('mario','andres',21,1.73)
+var jose = new Persona('jose','de la ossa',20,1.50)
+console.log('Nuevo objeto creado -> ' + mario.nombre +' '+mario.apellido );
+mario.saludar()
+mario.soyalto()
+jose.saludar()
+jose.soyalto()
